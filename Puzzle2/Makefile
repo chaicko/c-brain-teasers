@@ -28,7 +28,8 @@ $(TARGET): $(OBJS)
 # Test target (customize as needed)
 test: $(TARGET)
 	@echo "Running tests for $(TARGET)"
-	# Add your test commands here
+	@./$(TARGET) test_input.txt > test_output.txt
+	@diff test_output.txt expected_output.txt && echo "Test passed!" || (echo "Test failed!"; exit 1)
 
 # Run target
 run: $(TARGET)
