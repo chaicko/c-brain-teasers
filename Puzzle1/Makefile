@@ -25,10 +25,11 @@ $(TARGET): $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $<
 
-# Test target (customize as needed)
+# Test target
 test: $(TARGET)
 	@echo "Running tests for $(TARGET)"
-	# Add your test commands here
+	@./$(TARGET) test_input.txt > test_output.txt
+	@diff test_output.txt expected_output.txt && echo "Test passed!" || (echo "Test failed!"; exit 1)
 
 # Run target
 run: $(TARGET)
