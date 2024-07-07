@@ -20,14 +20,7 @@ jobs:
       run: make
 
     - name: Run tests for all puzzles
-      run: |
-        set -e
-        for dir in Puzzle*/; do
-          echo "Testing ${dir}"
-          cd "${dir}"
-          make test
-          cd ..
-        done
+      run: make test
 
     - name: Clean up
       run: make clean
