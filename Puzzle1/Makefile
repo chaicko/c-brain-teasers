@@ -2,7 +2,7 @@
 
 # Compiler and flags
 CC := gcc
-CFLAGS := -std=c11 -Wall -Wextra -pedantic
+CFLAGS := -std=c11 -Wall -Wextra -pedantic -D_POSIX_C_SOURCE=200112L
 
 # Binary name
 TARGET := count
